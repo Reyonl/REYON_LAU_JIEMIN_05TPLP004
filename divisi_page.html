@@ -13,19 +13,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     
-        <script>
-            function toggleSidebar() {
-                document.getElementById('sidebar').classList.toggle('hidden');
-            }
-    
-            function highlightMenu(menuItemId) {
-                const menuItems = document.querySelectorAll('.menu-item');
-                menuItems.forEach(item => item.classList.remove('bg-slate-700', 'text-white'));
-    
-                const selectedItem = document.getElementById(menuItemId);
-                selectedItem.classList.add('bg-slate-700', 'text-white');
-            }
-        </script>
+        <script src="script.js"></script>
     </head>
 
 <body class="bg-gray-100">
@@ -180,7 +168,7 @@
                     </div>
                 </div>
                 <div class="overflow-x-auto">
-                    <table class="min-w-full bg-white shadow-md rounded">
+                    <table class="min-w-full bg-white shadow-md rounded fade-in">
                         <thead>
                             <tr>
                                 <th class="py-2 px-4 bg-sky-900 text-white itim-regular">No</th>
