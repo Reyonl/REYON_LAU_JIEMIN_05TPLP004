@@ -24,5 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Tambahkan kelas 'active' setelah halaman dimuat
     setTimeout(() => {
         table.classList.add("active");
-    }, 100); // Beri sedikit jeda untuk efek yang lebih halus
+    }, 120); // Beri sedikit jeda untuk efek yang lebih halus
     });
+
+    // src/script.js
+
+// Contoh fungsi untuk mengupdate data absensi
+function updateAbsensi(today, previous) {
+    document.getElementById('absensiToday').innerText = today;
+    document.getElementById('absensiPrevious').innerText = previous;
+}
+
+// Panggil fungsi dengan data dummy
+updateAbsensi(14, 8);
