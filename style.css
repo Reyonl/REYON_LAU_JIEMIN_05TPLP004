@@ -1,0 +1,11 @@
+.itim-regular {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .menu-item.active {
+    background-color: bisque; /* Warna background saat aktif */
+    color: black; /* Warna teks saat aktif */
+    font-weight: bold; /* Menebalkan teks */
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Dashboard</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link data-n-head="ssr" rel="icon" type="image/x-icon" href="src/img/icons8-admin.gif">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    
+        <script>
+            function toggleSidebar() {
+                document.getElementById('sidebar').classList.toggle('hidden');
+            }
+    
+            function highlightMenu(menuItemId) {
+                const menuItems = document.querySelectorAll('.menu-item');
+                menuItems.forEach(item => item.classList.remove('bg-slate-700', 'text-white'));
+    
+                const selectedItem = document.getElementById(menuItemId);
+                selectedItem.classList.add('bg-slate-700', 'text-white');
+            }
+        </script>
+    </head>
+
+<body class="bg-gray-100">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Section -->
+        <div class="w-64 bg-white min-h-screen shadow-md flex flex-col justify-between" id="sidebar">
+            <div>
+                <div class="p-4 flex items-center">
+                    <img alt="University Logo" class="w-10 h-10 mr-2" height="50"
+                         src="https://storage.googleapis.com/a1aa/image/gaEo7XtmTBJfXC0U0qYslrL6s0Ibv2XyfebqGSkSuk1QHkYnA.jpg" width="50" />
+                    <div>
+                        <h1 class="itim-regular">UNIVERSITAS PAMULANG</h1>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex items-center mb-4">
+                        <img alt="User Avatar" class="w-10 h-10 rounded-full mr-2" height="50"
+                             src="https://storage.googleapis.com/a1aa/image/ajHbw77IHArgNJiwCrgZRlvHaTeSDKjrtzy6jcTXJw0zBJ2JA.jpg" width="50" />
+                        <div>
+                            <p class="itim-regular">Welcome, Reyon Lau</p>
+                            <p class=" itim-regular text-gray-500">Administrator</p>
+                        </div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li class="mb-2">
+                                <a id="dashboardLink" class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="dashboard.html">
+                                    <i class=" fas fa-tachometer-alt mr-2"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="itim-regular text-gray-700 mt-4 mb-2">MENU KARYAWAN</p>
+                        <ul>
+                            <li class="mb-2">
+                                <a  class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="karyawan_page.html">
+                                    <i class="fas fa-users mr-2"></i>
+                                    Karyawan
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a  class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="jabatan_page.html" >
+                                    <i class="fas fa-briefcase mr-2"></i>
+                                    Jabatan
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a  class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="divisi_page.html" >
+                                    <i class="fas fa-building mr-2"></i>
+                                    Divisi
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="itim-regular text-gray-700 mt-4 mb-2">MENU ABSENSI</p>
+                        <ul>
+                            <li class="mb-2">
+                                <a  class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="absensi_page.html" ">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    Absensi
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="izin_page.html">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    Izin
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="lembur_page.html">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    Lembur
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="itim-regular text-gray-700 mt-4 mb-2">MENU PENGGAJIAN</p>
+                        <ul>
+                            <li class="mb-2">
+                                <a class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="">
+                                   <i class="fa-solid fa-money-check-dollar mr-2"></i>
+                                    Slip Gaji
+                                </a>
+                            </li>
+
+                            <li class="mb-2">
+                                <a class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="">
+                                   <i class="fa-solid fa-print mr-2"></i>
+                                    Cetak Slip Gaji
+                                </a>
+                            </li>
+                        </ul>
+
+                        <p class="itim-regular text-gray-700 mt-4 mb-2">MENU LAPORAN</p>
+                        <ul>
+                            <li class="mb-2">
+                                <a class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="">
+                                   <i class="fa-solid fa-print mr-2"></i>
+                                    Cetak Laporan
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+            <div class="p-4">
+                <button class="w-full bg-red-500 itim-regular text-white p-2 rounded">
+                    <i class="fas fa-sign-out-alt mr-2"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="flex-1">
+            <div class="bg-slate-700 text-white p-4 flex justify-between items-center">
+                <button class="bg-sky-900 text-white p-2 rounded" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="flex items-center">
+                    <p class="mr-4 itim-regular">Welcome, Reyon Lau</p>
+                    <img alt="User Avatar" class="w-10 h-10 rounded-full" height="50"
+                         src="https://storage.googleapis.com/a1aa/image/ajHbw77IHArgNJiwCrgZRlvHaTeSDKjrtzy6jcTXJw0zBJ2JA.jpg" width="50" />
+                </div>
+            </div>
+            
+            <!-- Dashboard Page Content -->
+            <div id="Tambah Karyawan Page" class="page p-6">
+                <div class="flex space-x-4 mb-4">
+                    <a href="dashboard.html" class="itim-regular  ">
+                        <i class=" fas fa-tachometer-alt mr-2"></i>Dashboard
+                    </a>
+                    <a href="karyawan_page.html" class="itim-regular  ">
+                        <i class="fa-solid fa-circle-arrow-left mr-2"></i>Back
+                    </a>
+                </div>
+        
+                <div class="bg-slate-700 text-white p-6 rounded-lg shadow-md mb-4 flex justify-between items-center">
+                    <h1 class="text-2xl itim-regular">Form Tambah Data Karyawan</h1>
+                </div>
+            </div>
+            <!-- main content -->
+            <div class="bg-sky-900 p-6 rounded-lg shadow-md  mb-6">
+                <form class="rounded-full itim-regular" >
+                    <div class="mb-4">
+                        <label for="fullName" class="block text-cyan-200">Nama Lengkap</label>
+                        <input type="text" id="fullName" name="fullName" required
+                               class="mt-1 block w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring focus:ring-blue-300" />
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="gender" class="block text-cyan-200">Jenis Kelamin</label>
+                        <select id="gender" name="gender" required
+                                class="mt-1 block w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring focus:ring-blue-300">
+                            <option value="">Pilih Jenis Kelamin</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+            
+                    <div class="mb-4">
+                        <label for="email" class="block text-cyan-200">Email</label>
+                        <input type="email" id="email" name="email" required
+                               class="mt-1 block w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring focus:ring-blue-300" />
+                    </div>
+            
+                    <div class="mb-4">
+                        <label for="phone" class="block text-cyan-200">No HP</label>
+                        <input type="tel" id="phone" name="phone" required
+                               class="mt-1 block w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring focus:ring-blue-300" />
+                    </div>
+            
+                    <div class="mb-4">
+                        <label for="address" class="block text-cyan-200">Alamat</label>
+                        <textarea id="address" name="address" required
+                                  class="mt-1 block w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring focus:ring-blue-300"></textarea>
+                    </div>
+            
+                    <div class="mb-4">
+                        <label for="password" class="block text-cyan-200">Password</label>
+                        <input type="password" id="password" name="password" required
+                               class="mt-1 block w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring focus:ring-blue-300" />
+                    </div>
+            
+                    <div class="mb-4">
+                        <label for="position" class="block text-cyan-200">Jabatan</label>
+                        <select id="position" name="position" required
+                                class="mt-1 block w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring focus:ring-blue-300">
+                            <option value="">Pilih Jabatan</option>
+                            <option value="Staff">Staff</option>
+                            <option value="Supervisor">Supervisor</option>
+                            <option value="Manager">Manager</option>
+                        </select>
+                    </div>
+            
+                    <div class="mb-4">
+                        <label for="division" class="block text-cyan-200">Divisi</label>
+                        <select id="division" name="division" required
+                                class="mt-1 block w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring focus:ring-blue-300">
+                            <option value="">Pilih Divisi</option>
+                            <option value="Umum">Umum</option>
+                            <option value="BAUK">BAUK</option>
+                            <option value="BAA">BAA</option>
+                            <option value="IT">IT</option>
+                            <option value="Cleaning Service">Cleaning Service</option>
+                        </select>
+                    </div>
+            
+                    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Tambah Karyawan</button>
+                </form>
+            </div>
+            
+
+            
+            
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link data-n-head="ssr" rel="icon" type="image/x-icon" href="src/img/icons8-admin.gif">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('hidden');
+        }
+
+        function highlightMenu(menuItemId) {
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => item.classList.remove('bg-slate-700', 'text-white'));
+
+            const selectedItem = document.getElementById(menuItemId);
+            selectedItem.classList.add('bg-slate-700', 'text-white');
+        }
+    </script>
+</head>
+
+
+<body class="bg-gray-100">
+
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar Section -->
+        <div class="w-64 bg-white min-h-screen shadow-md flex flex-col justify-between" id="sidebar">
+            <div>
+                <div class="p-4 flex items-center">
+                    <img alt="University Logo" class="w-10 h-10 mr-2" height="50"
+                         src="src/img/unpam.png" width="50" />
+                    <div>
+                        <h1 class="itim-regular">UNIVERSITAS PAMULANG</h1>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex items-center mb-4">
+                        <img alt="User Avatar" class="w-10 h-10 rounded-full mr-2" height="50"
+                             src="src/img/r.png" width="50" />
+                        <div>
+                            <p class="itim-regular">Welcome, Reyon Lau</p>
+                            <p class=" itim-regular text-gray-500">Administrator</p>
+                        </div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li class="mb-2">
+                                <a id="dashboardLink" class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded active"
+                                   href="index.html">
+                                    <i class=" fas fa-tachometer-alt mr-2"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="itim-regular text-gray-700 mt-4 mb-2">MENU KARYAWAN</p>
+                        <ul>
+                            <li class="mb-2">
+                                <a  class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="karyawan_page.html">
+                                    <i class="fas fa-users mr-2"></i>
+                                    Karyawan
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a  class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="jabatan_page.html" >
+                                    <i class="fas fa-briefcase mr-2"></i>
+                                    Jabatan
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a  class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="divisi_page.html" >
+                                    <i class="fas fa-building mr-2"></i>
+                                    Divisi
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="itim-regular text-gray-700 mt-4 mb-2">MENU ABSENSI</p>
+                        <ul>
+                            <li class="mb-2">
+                                <a  class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="absensi_page.html" ">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    Absensi
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="izin_page.html">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    Izin
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="lembur_page.html">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    Lembur
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="itim-regular text-gray-700 mt-4 mb-2">MENU PENGGAJIAN</p>
+                        <ul>
+                            <li class="mb-2">
+                                <a class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="">
+                                   <i class="fa-solid fa-money-check-dollar mr-2"></i>
+                                    Slip Gaji
+                                </a>
+                            </li>
+
+                            <li class="mb-2">
+                                <a class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="">
+                                   <i class="fa-solid fa-print mr-2"></i>
+                                    Cetak Slip Gaji
+                                </a>
+                            </li>
+                        </ul>
+
+                        <p class="itim-regular text-gray-700 mt-4 mb-2">MENU LAPORAN</p>
+                        <ul>
+                            <li class="mb-2">
+                                <a class="menu-item flex items-center p-2 itim-regular text-gray-700 hover:bg-gray-200 rounded"
+                                   href="">
+                                   <i class="fa-solid fa-print mr-2"></i>
+                                    Cetak Laporan
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+            <div class="p-4">
+                <button class="w-full bg-red-500 itim-regular text-white p-2 rounded">
+                    <i class="fas fa-sign-out-alt mr-2"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="flex-1">
+            <div class="bg-slate-700 text-white p-4 flex justify-between items-center">
+                <button class="bg-sky-900 text-white p-2 rounded" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="flex items-center">
+                    <p class="mr-4 itim-regular">Welcome, Reyon Lau</p>
+                    <img alt="User Avatar" class="w-10 h-10 rounded-full" height="50"
+                         src="src/img/r.png" width="50" />
+                </div>
+            </div>
+            
+            <!-- Dashboard Page Content -->
+
+            <div id="dashboardPage" class="page p-6">
+                <div class="bg-slate-700 itim-regular text-white p-6 rounded-lg shadow-md mb-6">
+                    <h1>Sistem Informasi Manajemen Karyawan</h1>
+                    <p class="itim-regular">Admin Dashboard</p>
+                </div>
+
+                <div class="flex-1 p-6">
+                    <div id="dashboardContent" class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                      
+                      <!-- Data Pegawai -->
+                      <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
+                        <div class="bg-sky-900 text-white p-3 rounded-full">
+                          <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                          <h3 class="itim-regular font-semibold">Data Pegawai</h3>
+                          <p class="text-2xl font-bold">3</p>
+                        </div>
+                      </div>
+                      
+                      <!-- Absensi Hari Ini -->
+                      <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
+                        <div class="bg-sky-900 text-white p-3 rounded-full">
+                          <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div>
+                          <h3 class="itim-regular font-semibold">Absensi Hari Ini</h3>
+                          <p class="text-2xl font-bold">12</p>
+                          <p class="text-sm text-gray-500">1 November 2024</p>
+                        </div>
+                      </div>
+                      
+                      <!-- Izin Menunggu Konfirmasi -->
+                      <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
+                        <div class="bg-sky-900 text-white p-3 rounded-full">
+                          <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                          <h3 class="itim-regular font-semibold">Izin Menunggu Konfirmasi</h3>
+                          <p class="text-2xl font-bold">2</p>
+                        </div>
+                      </div>
+                      
+                      <!-- Total Lembur Bulan Ini -->
+                      <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
+                        <div class="bg-purple-500 text-white p-3 rounded-full">
+                          <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                          <h3 class="itim-regular font-semibold">Total Lembur Bulan Ini</h3>
+                          <p class="text-2xl font-bold">15 Jam</p>
+                        </div>
+                      </div>
+                      
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karyawan Page Content -->
+            <div id="karyawanPage" class="page hidden p-6">
+                <h2 class="text-2xl font-bold mb-4">Karyawan</h2>
+                <p class="mb-2">Daftar karyawan di perusahaan.</p>
+                <!-- Add your karyawan content here -->
+            </div>
+
+            <!-- Jabatan Page Content -->
+            <div id="jabatanPage" class="page hidden p-6">
+                <h2 class="text-2xl font-bold mb-4">Jabatan</h2>
+                <p class="mb-2">Daftar jabatan di perusahaan.</p>
+                <!-- Add your jabatan content here -->
+            </div>
+
+            <!-- Divisi Page Content -->
+            <div id="divisiPage" class="page hidden p-6">
+                <h2 class="text-2xl font-bold mb-4">Divisi</h2>
+                <p class="mb-2">Daftar divisi di perusahaan.</p>
+                <!-- Add your divisi content here -->
+            </div>
+
+            <!-- Absensi Page Content -->
+            <div id="absensiPage" class="page hidden p-6">
+                <h2 class="text-2xl font-bold mb-4">Absensi</h2>
+                <p class="mb-2">Data absensi karyawan.</p>
+                <!-- Add your absensi content here -->
+            </div>
+
+            <!-- Izin Page Content -->
+            <div id="daftarIzinPage" class="page hidden p-6">
+                <h2 class="text-2xl font-bold mb-4">Izin</h2>
+                <p class="mb-2">Data izin karyawan.</p>
+                <!-- Add your izin content here -->
+            </div>
+
+            <!-- Lembur Page Content -->
+            <div id="daftarLemburPage" class="page hidden p-6">
+                <h2 class="text-2xl font-bold mb-4">Lembur</h2>
+                <p class="mb-2">Data lembur karyawan.</p>
+                <!-- Add your lembur content here -->
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
