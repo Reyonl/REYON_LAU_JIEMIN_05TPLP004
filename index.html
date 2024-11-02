@@ -174,17 +174,36 @@
                         </div>
                       </div>
                       
-                      <!-- Absensi Hari Ini -->
-                      <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
-                        <div class="bg-sky-900 text-white p-3 rounded-full">
-                          <i class="fas fa-calendar-alt"></i>
+                   <!-- Perbandingan Absensi dengan ID -->
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <h3 class="itim-regular font-semibold mb-2">Perbandingan Absensi</h3>
+                            <div class="flex items-center justify-between">
+                                <!-- Absensi Hari Ini -->
+                                <div class="flex items-center space-x-2">
+                                    <div class="bg-sky-900 text-white p-2 rounded-full">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">Hari Ini</p>
+                                        <p class="text-xl font-bold" id="absensiToday">14</p>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="text-gray-500">VS</span>
+                                </div>
+                                <!-- Absensi Sebelumnya -->
+                                <div class="flex items-center space-x-2">
+                                    <div class="bg-gray-500 text-white p-2 rounded-full">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">Kemarin</p>
+                                        <p class="text-xl font-bold" id="absensiPrevious">8</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                          <h3 class="itim-regular font-semibold">Absensi Hari Ini</h3>
-                          <p class="text-2xl font-bold">10</p>
-                          <p class="text-sm text-gray-500">2 November 2024</p>
-                        </div>
-                      </div>
+
                       
                       <!-- Izin Menunggu Konfirmasi -->
                       <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
